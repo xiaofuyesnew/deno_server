@@ -5,14 +5,14 @@ export const addFriend = async (context: any) => {
   try {
     // acessing data from the request body
     let body: any = await context.request.body();
-    console.log(body)
-    const { name, pno, email } = body.value;
+    const { name, pno, email } = await body.value;
 
     // inserting into the db
+    console.log(name, pno, email);
     const id = await Friend.insertOne({
-      name: name,
-      pno: pno,
-      email: email,
+      name,
+      pno,
+      email,
     });
 
     // sending the response

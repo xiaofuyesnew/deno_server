@@ -10,3 +10,18 @@ content-type: application/json
   "pno": "13260662309",
   "email": "xiaofuyesnew@qq.com"
 }
+
+###
+
+DELETE http://localhost:3006/deleteFriend/5f6c131600b7ad9700794444
+
+###
+
+PATCH http://localhost:3006/updateFriend/5f6af7f708033706fe52264d
+content-type: application/json
+
+{
+  "name": "allen",
+  "pno": "13260662309",
+  "email": "xiaofuyesnew@qq.com"
+}

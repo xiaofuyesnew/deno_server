@@ -7,17 +7,18 @@ export const updateFriend: any = async (context: any) => {
     const id: string = context.params.id;
     // accessing data from the request body
     let body: any = await context.request.body();
-
+    let value: any = await body.value
     // creating the data object which has the updated values
     let data: { email?: String; pno?: String } = {};
-    if (body.value.email) { // if an updated email id is sent
-      data["email"] = body.value.email;
+    if (value.email) { // if an updated email id is sent
+      data["email"] = value.email;
     }
-    if (body.value.pno) { // if an updated phone no is sent
-      data["pno"] = body.value.pno;
+    if (value.pno) { // if an updated phone no is sent
+      data["pno"] = value.pno;
     }
 
     // Updating the database
+    console.log(data)
     const result = await Friend.updateOne(
       { _id: { "$oid": id } },
       { $set: data },
