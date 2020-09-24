@@ -1,1 +1,12 @@
 GET http://localhost:3006/getFriend/5f6af7f708033706fe52264d
+
+###
+
+POST http://localhost:3006/addFriend
+content-type: application/json
+
+{
+  "name": "allen",
+  "pno": "13260662309",
+  "email": "xiaofuyesnew@qq.com"
+}
