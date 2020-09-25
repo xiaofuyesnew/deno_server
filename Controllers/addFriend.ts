@@ -18,7 +18,8 @@ export const addFriend = async (context: any) => {
     // sending the response
     context.response.body = id;
     context.response.status = 201;
-  } // when the insertion fails
+  } 
+  // when the insertion fails
   catch (e) {
     context.response.body = null;
     context.response.status = 500;
